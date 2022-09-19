@@ -126,6 +126,7 @@ class AlbumController extends Controller
                 delete_photo($photo->photo);
             }
             $album->photos()->delete();
+            $album->delete();
             return redirect()->route('albums.index')->with(['success' => 'delete all photo of this album success']);
 
         }
